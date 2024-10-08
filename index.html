@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Photo Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Typing effect function
+    window.onload = function() {
+      const h1 = document.querySelector("h1");
+      const text = "Ankush's Gallery";
+      let index = 0;
+      
+      // Function to type out the text
+      function typeText() {
+        if (index < text.length) {
+          h1.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(typeText, 100);  // Typing speed: 100ms between characters
+        }
+      }
+      typeText();  // Start typing effect
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1></h1>
+    <div class="menu-container">
+      <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+      <div id="dropdown-menu" class="dropdown hidden">
+        <a href="album1.html">1-YEAR</a>
+        <a href="album2.html">Little Krishna</a>
+        <a href="album3.html">BirthDay</a>
+        <a href="album4.html">PreShoot</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="album-container" id="album-list">
+      <div class="album" onclick="window.location.href='album1.html'">
+        <img src="b1.jpg" alt="Album 1">
+        <h3>1-YEAR</h3>
+      </div>
+      <div class="album" onclick="window.location.href='album2.html'">
+        <img src="k1.jpg" alt="Album 2">
+        <h3>Little Krishna</h3>
+      </div>
+      <div class="album" onclick="window.location.href='album3.html'">
+        <img src="h1.jpg" alt="Album 3">
+        <h3>BirthDay</h3>
+      </div>
+      <div class="album" onclick="window.location.href='album4.html'">
+        <img src="p1.jpg" alt="Album 1">
+        <h3>PreShoot</h3>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
